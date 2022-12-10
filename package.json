@@ -42,9 +42,9 @@
     "prettier": "2.8.1"
   },
   "lint-staged": {
-    "**/*.{js, jsx, ts, tsx}": [
-      "npx eslint",
-      "npx prettier --write"
+    "**/*.{js,jsx,ts,tsx}": [
+      "npx eslint .",
+      "npx prettier --write ."
     ]
   }
 }
