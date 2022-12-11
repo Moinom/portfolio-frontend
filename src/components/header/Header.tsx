@@ -1,12 +1,13 @@
-import React, { useContext } from 'react';
-import { ThemeContext } from '../../contexts/ThemeProvider';
+import React from 'react';
+import ToggleSwitch from '../toggleSwitch/ToggleSwitch';
+import styles from './Header.module.css';
 
 function Header() {
-  const { toggleTheme } = useContext(ThemeContext);
-
   return (
-    <div>
-      <button onClick={toggleTheme}>Toggle Theme</button>
+    <div className={styles.headerWrapper}>
+      <span>Art</span>
+      <ToggleSwitch />
+      <span>Code</span>
     </div>
   );
 }
