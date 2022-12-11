@@ -1,1 +1,15 @@
+.app-wrapper {
+  width: 100vw;
+  height: 100vh;
+  transition: background-color 0.5s ease;
+}
 
+.art-colours {
+  color: #3e5fd4;
+  background-color: #f4f4f4;
+}
+
+.code-colours {
+  color: #e7e7e7;
+  background-color: #2f51cb;
+}
