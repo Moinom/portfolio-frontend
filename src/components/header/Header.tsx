@@ -5,9 +5,9 @@ import styles from './Header.module.css';
 function Header() {
   return (
     <div className={styles.headerWrapper}>
-      <span>Art</span>
+      <span className={`${styles.themeLabel} ${styles.art}`}>Art</span>
       <ToggleSwitch />
-      <span>Code</span>
+      <span className={`${styles.themeLabel} ${styles.code}`}>Code</span>
     </div>
   );
 }

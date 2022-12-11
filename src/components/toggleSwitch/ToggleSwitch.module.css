@@ -1,6 +1,6 @@
 .toggleSwitchWrapper {
-  height: 110px;
-  width: 325px;
+  min-height: 110px;
+  min-width: 325px;
   border-radius: 60px;
   margin: 0 50px;
   position: relative;

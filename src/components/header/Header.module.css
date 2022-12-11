@@ -3,5 +3,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20% 0 0 0;
+  padding: 10% 0 0 0;
+}
+
+.themeLabel {
+  font-size: 64px;
+  text-transform: uppercase;
+}
+
+.art {
+  font-family: 'Caveat';
+  color: #3e5fd4;
+}
+
+.code {
+  font-family: 'Iceberg';
+  color: #e7e7e7;
 }

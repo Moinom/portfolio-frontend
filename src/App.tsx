@@ -1,15 +1,15 @@
 import React, { useContext } from 'react';
 import Header from './components/header/Header';
 import { ThemeContext, themes } from './contexts/ThemeProvider';
-import './App.css';
+import styles from './App.module.css';
 
 function App() {
   const { theme } = useContext(ThemeContext);
 
   return (
     <div
-      className={`app-wrapper ${
-        theme === themes.art ? 'art-colours' : 'code-colours'
+      className={`${styles.appWrapper} ${
+        theme === themes.art ? styles.artColours : styles.codeColours
       }`}
     >
       <Header />
