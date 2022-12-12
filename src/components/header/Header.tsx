@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import ToggleSwitch from '../toggleSwitch/ToggleSwitch';
 import styles from './Header.module.css';
 
@@ -6,9 +7,13 @@ function Header() {
   return (
     <div className={styles.headerWrapper}>
       <div className={styles.switchWrapper}>
-        <span className={`${styles.themeLabel} ${styles.art}`}>Art</span>
+        <Link to={'/'} className={styles.link}>
+          <span className={`${styles.themeLabel} ${styles.art}`}>Art</span>
+        </Link>
         <ToggleSwitch />
-        <span className={`${styles.themeLabel} ${styles.code}`}>Code</span>
+        <Link to={'/'} className={styles.link}>
+          <span className={`${styles.themeLabel} ${styles.code}`}>Code</span>
+        </Link>
       </div>
       <span className={styles.subTitle}>by Lisa</span>
     </div>
