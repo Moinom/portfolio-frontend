@@ -9,7 +9,7 @@ const Footer = () => {
   const { theme } = useContext(ThemeContext);
   return (
     <div className={styles.footerWrapper}>
-      <div>
+      <div className={styles.iconWrapper}>
         <a
           href="https://www.instagram.com/moinomlisa/"
           target="_blank"

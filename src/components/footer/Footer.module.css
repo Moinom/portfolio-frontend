@@ -3,7 +3,7 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  padding: 20px 5%;
+  padding: 30px 5%;
 }
 
 .socialMediaIcon {
@@ -27,4 +27,15 @@
 
 .codeStrokeColour {
   stroke: #e7e7e7;
+}
+
+/* mobile view */
+@media (max-width: 800px) {
+  .footerWrapper {
+    flex-direction: column;
+  }
+
+  .iconWrapper {
+    margin-bottom: 10px;
+  }
 }
