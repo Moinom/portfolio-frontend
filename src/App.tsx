@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import Header from './components/header/Header';
 import { ThemeContext, themes } from './contexts/ThemeProvider';
 import styles from './App.module.css';
+import Footer from './components/footer/Footer';
 
 function App() {
   const { theme } = useContext(ThemeContext);
@@ -13,6 +14,7 @@ function App() {
       }`}
     >
       <Header />
+      <Footer />
     </div>
   );
 }
