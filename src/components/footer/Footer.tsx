@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { ReactComponent as InstagramIcon } from '../../assets/icons/instagram.svg';
 import { ReactComponent as LinkedInIcon } from '../../assets/icons/linkedin.svg';
 import { ReactComponent as EmailIcon } from '../../assets/icons/mail.svg';
@@ -42,22 +43,22 @@ const Footer = () => {
       </div>
 
       <div>
-        <a
+        <Link
           className={`${styles.footerLinks} ${
             theme === themes.code ? styles.codeColour : ''
           }`}
-          href="#"
+          to={'/imprint'}
         >
-          Impressum
-        </a>
-        <a
+          Imprint
+        </Link>
+        <Link
           className={`${styles.footerLinks} ${
             theme === themes.code ? styles.codeColour : ''
           }`}
-          href="#"
+          to={'/privacy'}
         >
-          Datenschutz
-        </a>
+          Privacy
+        </Link>
       </div>
     </div>
   );
