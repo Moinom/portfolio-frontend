@@ -1,0 +1,19 @@
+.popupBackground {
+  background-color: rgba(0, 11, 54, 0.8);
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.popupWrapper {
+  background-color: #fff;
+  position: relative;
+  width: 300px;
+  height: auto;
+  padding: 20px;
+  margin: auto;
+  top: 50%;
+  transform: translateY(-50%);
+}
