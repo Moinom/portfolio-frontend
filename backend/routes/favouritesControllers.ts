@@ -26,7 +26,7 @@ const getFavouritesByTag = (request: Request, response: Response) => {
   const checkedTags = request.query.tags;
 
   if (!isStringArray(checkedTags)) {
-    return response.status(500).json({ error: 'Invalid dataset' });
+    return response.status(400).json({ error: 'Invalid dataset' });
   }
 
   imagekitCode.listFiles(

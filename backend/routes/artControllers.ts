@@ -23,10 +23,10 @@ const getAllArt = (request: Request, response: Response) => {
 };
 
 const getArtByTag = (request: Request, response: Response) => {
-  const checkedTags = request.query.tags || [imagekitCategories.art];
+  const checkedTags = request.query.tags;
 
   if (!isStringArray(checkedTags)) {
-    return response.status(500).json({ error: 'Invalid dataset' });
+    return response.status(400).json({ error: 'Invalid dataset' });
   }
 
   imagekitArt.listFiles(
