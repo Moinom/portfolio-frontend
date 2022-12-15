@@ -3,5 +3,6 @@ import * as artControllers from './artControllers';
 const router = express.Router();
 
 router.get('/', artControllers.getAllArt);
+router.get('/', artControllers.getArtByTag);
 
 export default router;

@@ -1,13 +1,13 @@
 import { Request, Response } from 'express';
 import {
-  imagekitArt,
+  imagekitCode,
   isStringArray,
   imagekitCategories,
 } from '../services/imagekitService';
 
-const getAllArt = (request: Request, response: Response) => {
-  const tag = [imagekitCategories.art];
-  imagekitArt.listFiles(
+const getAllCode = (request: Request, response: Response) => {
+  const tag = [imagekitCategories.code];
+  imagekitCode.listFiles(
     {
       skip: 0,
       limit: 100,
@@ -22,14 +22,14 @@ const getAllArt = (request: Request, response: Response) => {
   );
 };
 
-const getArtByTag = (request: Request, response: Response) => {
-  const checkedTags = request.query.tags || [imagekitCategories.art];
+const getCodeByTag = (request: Request, response: Response) => {
+  const checkedTags = request.query.tags;
 
   if (!isStringArray(checkedTags)) {
     return response.status(500).json({ error: 'Invalid dataset' });
   }
 
-  imagekitArt.listFiles(
+  imagekitCode.listFiles(
     {
       skip: 0,
       limit: 100,
@@ -43,4 +43,5 @@ const getArtByTag = (request: Request, response: Response) => {
     }
   );
 };
-export { getAllArt, getArtByTag };
+
+export { getAllCode, getCodeByTag };
