@@ -5,25 +5,8 @@ import {
   imagekitCategories,
 } from '../services/imagekitService';
 
-const getAllCode = (request: Request, response: Response) => {
-  const tag = [imagekitCategories.code];
-  imagekitCode.listFiles(
-    {
-      skip: 0,
-      limit: 100,
-      tags: tag,
-    },
-    function (error, result) {
-      if (error) {
-        return response.status(500).json({ error: error });
-      }
-      return response.json(result);
-    }
-  );
-};
-
 const getCodeByTag = (request: Request, response: Response) => {
-  const checkedTags = request.query.tags;
+  const checkedTags = request.query.tags || [imagekitCategories.code];
 
   if (!isStringArray(checkedTags)) {
     return response.status(400).json({ error: 'Invalid dataset' });
@@ -44,4 +27,4 @@ const getCodeByTag = (request: Request, response: Response) => {
   );
 };
 
-export { getAllCode, getCodeByTag };
+export { getCodeByTag };
