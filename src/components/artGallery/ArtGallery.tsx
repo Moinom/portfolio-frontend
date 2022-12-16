@@ -1,12 +1,10 @@
-import React, { useContext, useState } from 'react';
-import { ThemeContext, themes } from '../../contexts/ThemeProvider';
+import React, { useState } from 'react';
 import FilterPopUp from '../filterPopUp/FilterPopUp';
 import { artFilters } from '../filterPopUp/filters';
 import { ReactComponent as FilterIcon } from '../../assets/icons/filter.svg';
 import styles from './ArtGallery.module.css';
 
 const ArtGallery = () => {
-  const { theme } = useContext(ThemeContext);
   const [filters, setFilters] = useState(artFilters);
   const [isPopupVisible, setPopupVisible] = useState(false);
 
@@ -23,11 +21,7 @@ const ArtGallery = () => {
   return (
     <section>
       <div className={styles.filter} onClick={togglePopupVisibility}>
-        <FilterIcon
-          className={`${styles.filterIcon} ${
-            theme === themes.code ? styles.codeStrokeColour : ''
-          }`}
-        />
+        <FilterIcon className={styles.filterIcon} />
         <h1>Filter</h1>
       </div>
       {isPopupVisible && (
