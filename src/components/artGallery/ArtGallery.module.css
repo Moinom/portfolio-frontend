@@ -1,0 +1,12 @@
+.filter {
+  display: flex;
+  cursor: pointer;
+}
+
+.filterIcon {
+  transform: scale(0.75);
+}
+
+.codeStrokeColour {
+  stroke: #e7e7e7;
+}

@@ -1,4 +1,5 @@
 export const artFilters = [
+  { tag: 'art', checked: false, name: 'all' },
   { tag: 'manual', checked: false, name: 'manual' },
   { tag: 'fanart', checked: false, name: 'fanart' },
   { tag: 'digital', checked: false, name: 'digital' },

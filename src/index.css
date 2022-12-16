@@ -29,6 +29,18 @@ ul {
   font-weight: normal;
 }
 
+h1,
+h2 {
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 20px;
+}
+h2 {
+  font-size: 18px;
+}
+
 ol,
 ul {
   list-style: none;

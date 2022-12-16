@@ -1,19 +1,30 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './FilterPopUp.module.css';
-import { artFilters } from './filters';
+import { ReactComponent as CloseIcon } from '../../assets/icons/x.svg';
 
-const FilterPopUp = () => {
-  const [filters, setFilters] = useState(artFilters);
+interface FilterProps {
+  togglePopupVisibility: () => void;
+  updateFilter: (index: number) => void;
+  filters: {
+    tag: string;
+    checked: boolean;
+    name: string;
+  }[];
+}
 
-  const updateFilter = (index: number) => {
-    const updatedFilters = [...filters];
-    updatedFilters[index].checked = !filters[index].checked;
-    setFilters(updatedFilters);
-  };
-
+const FilterPopUp = ({
+  updateFilter,
+  filters,
+  togglePopupVisibility,
+}: FilterProps) => {
   return (
-    <div className={styles.popupBackground}>
-      <div className={styles.popupWrapper}>
+    <>
+      <div className={styles.popupBackground} onClick={togglePopupVisibility} />
+      <ul className={styles.popupWrapper}>
+        <CloseIcon
+          className={styles.closeIcon}
+          onClick={togglePopupVisibility}
+        />
         {filters.map((filter, index) => (
           <li>
             <input
@@ -21,12 +32,13 @@ const FilterPopUp = () => {
               id={filter.tag + index}
               name={filter.tag}
               onChange={() => updateFilter(index)}
+              checked={filter.checked}
             />
             <label htmlFor={filter.tag}>{filter.name}</label>
           </li>
         ))}
-      </div>
-    </div>
+      </ul>
+    </>
   );
 };
 

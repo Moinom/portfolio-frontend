@@ -16,4 +16,17 @@
   margin: auto;
   top: 50%;
   transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+}
+
+.popupWrapper li {
+  margin-bottom: 5px;
+}
+
+.closeIcon {
+  position: absolute;
+  cursor: pointer;
+  right: 20px;
+  top: 20px;
 }
