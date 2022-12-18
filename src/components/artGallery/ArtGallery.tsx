@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import FilterPopUp from '../filterPopUp/FilterPopUp';
 import { artFilters } from '../filterPopUp/filters';
 import { ReactComponent as FilterIcon } from '../../assets/icons/filter.svg';
 import styles from './ArtGallery.module.css';
+import { getArtByTags } from '../../api/apiCalls';
 
 const ArtGallery = () => {
   const [filters, setFilters] = useState(artFilters);
@@ -17,6 +18,10 @@ const ArtGallery = () => {
     updatedFilters[index].checked = !filters[index].checked;
     setFilters(updatedFilters);
   };
+
+  useEffect(() => {
+    getArtByTags(filters);
+  }, [filters]);
 
   return (
     <section>

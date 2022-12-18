@@ -1,16 +1,16 @@
 import { Request, Response } from 'express';
-import {
-  imagekitCode,
-  isStringArray,
-  imagekitCategories,
-} from '../services/imagekitService';
+import { imagekitCode, imagekitCategories } from '../services/imagekitService';
 
 const getFavouritesByTag = (request: Request, response: Response) => {
-  const checkedTags = request.query.tags || [imagekitCategories.favourites];
+  const tagParams = request.query.tags;
 
-  if (!isStringArray(checkedTags)) {
+  if (typeof tagParams !== 'string') {
     return response.status(400).json({ error: 'Invalid dataset' });
   }
+  const checkedTags =
+    tagParams.length > 0
+      ? tagParams.split(',')
+      : [imagekitCategories.favourites];
 
   imagekitCode.listFiles(
     {

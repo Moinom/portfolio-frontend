@@ -27,9 +27,3 @@ export const imagekitFavourites = new ImageKit({
   urlEndpoint:
     `${process.env.IMAGEKIT_URL}/${imagekitCategories.favourites}` || '',
 });
-
-export function isStringArray(
-  tags: string | ParsedQs | string[] | ParsedQs[] | undefined
-) {
-  return Array.isArray(tags) && !tags.some((tag) => typeof tag !== 'string');
-}

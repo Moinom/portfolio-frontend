@@ -1,3 +1,9 @@
+export interface Filter {
+  tag: string;
+  checked: boolean;
+  name: string;
+}
+
 export const artFilters = [
   { tag: 'art', checked: false, name: 'all' },
   { tag: 'manual', checked: false, name: 'manual' },
