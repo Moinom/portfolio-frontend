@@ -15,7 +15,7 @@ export const getArtByTags = async (tags: Filter[]) => {
       options
     );
     if (response.ok) {
-      return response;
+      return response.json();
     }
     throw response;
   } catch (error) {

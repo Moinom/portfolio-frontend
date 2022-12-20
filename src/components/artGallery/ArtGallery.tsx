@@ -4,10 +4,14 @@ import { artFilters } from '../filterPopUp/filters';
 import { ReactComponent as FilterIcon } from '../../assets/icons/filter.svg';
 import styles from './ArtGallery.module.css';
 import { getArtByTags } from '../../api/apiCalls';
+import { Art } from './artTypes';
+import ArtCard from '../artCard/ArtCard';
 
 const ArtGallery = () => {
   const [filters, setFilters] = useState(artFilters);
   const [isPopupVisible, setPopupVisible] = useState(false);
+  // eslint-disable-next-line no-unused-vars
+  const [art, setArt] = useState<Art[]>([]);
 
   const togglePopupVisibility = () => {
     setPopupVisible(!isPopupVisible);
@@ -20,7 +24,7 @@ const ArtGallery = () => {
   };
 
   useEffect(() => {
-    getArtByTags(filters);
+    getArtByTags(filters).then((response) => setArt(response));
   }, [filters]);
 
   return (
@@ -36,6 +40,9 @@ const ArtGallery = () => {
           togglePopupVisibility={togglePopupVisibility}
         />
       )}
+      {art.map((item) => {
+        return <ArtCard {...item} />;
+      })}
     </section>
   );
 };

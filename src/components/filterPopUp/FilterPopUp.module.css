@@ -1,5 +1,16 @@
+.popupWrapper {
+  /* position: absolute; */
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
 .popupBackground {
-  background-color: rgba(0, 11, 54, 0);
+  background-color: rgba(0, 11, 54, 0.8);
   width: 100vw;
   height: 100vh;
   position: absolute;
@@ -8,11 +19,7 @@
   transition: all 0.5s ease;
 }
 
-.popupBackgroundVisible {
-  background-color: rgba(0, 11, 54, 0.8);
-}
-
-.popupWrapper {
+.popup {
   background-color: #fff;
   position: relative;
   width: 300px;
@@ -25,7 +32,7 @@
   flex-direction: column;
 }
 
-.popupWrapper li {
+.popup li {
   margin-bottom: 5px;
 }
 
