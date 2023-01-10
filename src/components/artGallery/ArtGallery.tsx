@@ -10,7 +10,6 @@ import ArtCard from '../artCard/ArtCard';
 const ArtGallery = () => {
   const [filters, setFilters] = useState(artFilters);
   const [isPopupVisible, setPopupVisible] = useState(false);
-  // eslint-disable-next-line no-unused-vars
   const [art, setArt] = useState<Art[]>([]);
 
   const togglePopupVisibility = () => {
@@ -40,9 +39,11 @@ const ArtGallery = () => {
           togglePopupVisibility={togglePopupVisibility}
         />
       )}
-      {art.map((item) => {
-        return <ArtCard {...item} />;
-      })}
+      <div className={styles.gallery}>
+        {art.map((item) => {
+          return <ArtCard {...item} />;
+        })}
+      </div>
     </section>
   );
 };
