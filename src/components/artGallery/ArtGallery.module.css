@@ -14,6 +14,7 @@
 .gallery {
   column-count: 4;
   column-gap: 15px;
+  margin: 20px 0;
 }
 
 /* small desktop / tablet view */
@@ -29,5 +30,8 @@
   .gallery {
     column-count: 1;
     column-gap: 5px;
+  }
+  .filter h1 {
+    display: none;
   }
 }

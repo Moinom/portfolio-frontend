@@ -1,5 +1,4 @@
 import ImageKit from 'imagekit';
-import { ParsedQs } from 'qs';
 import * as dotenv from 'dotenv';
 dotenv.config();
 

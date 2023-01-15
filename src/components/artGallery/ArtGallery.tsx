@@ -40,8 +40,8 @@ const ArtGallery = () => {
         />
       )}
       <div className={styles.gallery}>
-        {art.map((item) => {
-          return <ArtCard {...item} />;
+        {art.map((item, index) => {
+          return <ArtCard {...item} key={`artcard${index}`} />;
         })}
       </div>
     </section>
