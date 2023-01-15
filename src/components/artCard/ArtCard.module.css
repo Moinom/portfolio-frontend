@@ -16,11 +16,12 @@
   height: calc(100% - 4px);
   color: #e7e7e7;
   background-color: rgba(0, 27, 124, 0.7);
-  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .wrapper:hover > .layover {
-  visibility: visible;
+  opacity: 1;
 }
 
 .layover h3 {
