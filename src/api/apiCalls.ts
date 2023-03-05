@@ -1,19 +1,11 @@
 import * as apiUrls from './urls';
-import { Filter } from '../components/filterPopUp/filters';
 
-export const getArtByTags = async (tags: Filter[]) => {
-  const checkedTags = tags
-    .filter((item) => item.checked && item.tag)
-    .map((item) => item.tag);
-
+export const getArt = async () => {
   try {
     let options = {
       method: 'GET',
     };
-    const response = await fetch(
-      `${apiUrls.artUrl}?tags=${checkedTags}`,
-      options
-    );
+    const response = await fetch(`${apiUrls.artUrl}`, options);
     if (response.ok) {
       return response.json();
     }

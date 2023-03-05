@@ -1,20 +1,29 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import FilterPopUp from '../filterPopUp/FilterPopUp';
-import { artFilters } from '../filterPopUp/filters';
+import { artFilters, Filter } from '../filterPopUp/filters';
 import { ReactComponent as FilterIcon } from '../../assets/icons/filter.svg';
 import styles from './ArtGallery.module.css';
-import { getArtByTags } from '../../api/apiCalls';
+import { getArt } from '../../api/apiCalls';
 import { Art } from './artTypes';
 import ArtCard from '../artCard/ArtCard';
 
 const ArtGallery = () => {
   const [filters, setFilters] = useState(artFilters);
+  const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [isPopupVisible, setPopupVisible] = useState(false);
   const [art, setArt] = useState<Art[]>([]);
 
   const togglePopupVisibility = () => {
     setPopupVisible(!isPopupVisible);
   };
+
+  const updateSeletedFilters = useCallback((updatedFilters: Filter[]) => {
+    const newFilters: string[] = [];
+    updatedFilters.forEach(
+      (filter) => filter.checked && newFilters.push(filter.tag)
+    );
+    setSelectedTags(newFilters);
+  }, []);
 
   const updateFilter = (index: number) => {
     const updatedFilters = [...filters];
@@ -23,8 +32,12 @@ const ArtGallery = () => {
   };
 
   useEffect(() => {
-    getArtByTags(filters).then((response) => setArt(response));
-  }, [filters]);
+    updateSeletedFilters(filters);
+  }, [filters, updateSeletedFilters]);
+
+  useEffect(() => {
+    getArt().then((response) => setArt(response));
+  }, []);
 
   return (
     <section>
@@ -40,9 +53,13 @@ const ArtGallery = () => {
         />
       )}
       <div className={styles.gallery}>
-        {art.map((item, index) => {
-          return <ArtCard {...item} key={`artcard${index}`} />;
-        })}
+        {art
+          .filter((artItem) =>
+            artItem.tags.some((tag) => selectedTags.includes(tag))
+          )
+          .map((item, index) => {
+            return <ArtCard {...item} key={`artcard${index}`} />;
+          })}
       </div>
     </section>
   );

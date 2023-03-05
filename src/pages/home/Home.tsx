@@ -9,7 +9,6 @@ const Home = () => {
   const [buttonVisibility, setButtonVisibility] = useState<boolean>(false);
 
   useEffect(() => {
-    console.log('scroll', window.scrollY);
     const handleButtonVisibility = () => {
       window.scrollY > 300
         ? setButtonVisibility(true)

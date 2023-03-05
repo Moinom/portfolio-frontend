@@ -1,6 +1,22 @@
 import { Request, Response } from 'express';
 import { imagekitArt, imagekitCategories } from '../services/imagekitService';
 
+const getArt = (request: Request, response: Response) => {
+  imagekitArt.listFiles(
+    {
+      skip: 0,
+      limit: 100,
+      tags: [imagekitCategories.art],
+    },
+    function (error, result) {
+      if (error) {
+        return response.status(500).json({ error: error });
+      }
+      return response.json(result);
+    }
+  );
+};
+
 const getArtByTag = (request: Request, response: Response) => {
   const tagParams = request.query.tags;
   if (typeof tagParams !== 'string') {
@@ -23,4 +39,4 @@ const getArtByTag = (request: Request, response: Response) => {
     }
   );
 };
-export { getArtByTag };
+export { getArt, getArtByTag };

@@ -5,7 +5,7 @@ export interface Filter {
 }
 
 export const artFilters = [
-  { tag: 'art', checked: false, name: 'all' },
+  { tag: 'art', checked: true, name: 'all' },
   { tag: 'manual', checked: false, name: 'manual' },
   { tag: 'fanart', checked: false, name: 'fanart' },
   { tag: 'digital', checked: false, name: 'digital' },
