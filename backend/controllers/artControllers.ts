@@ -1,5 +1,9 @@
 import { Request, Response } from 'express';
-import { imagekitArt, imagekitCategories } from '../services/imagekitService';
+import {
+  ImagekitResponse,
+  imagekitArt,
+  imagekitCategories,
+} from '../services/imagekitService';
 
 const getArt = (request: Request, response: Response) => {
   imagekitArt.listFiles(
@@ -8,35 +12,20 @@ const getArt = (request: Request, response: Response) => {
       limit: 100,
       tags: [imagekitCategories.art],
     },
-    function (error, result) {
+    function (error, result: ImagekitResponse[] | null) {
       if (error) {
         return response.status(500).json({ error: error });
       }
-      return response.json(result);
+      const data = result?.map((data) => ({
+        title: data.customMetadata!.title,
+        height: data.height,
+        width: data.width,
+        url: data.url,
+        tags: data.tags,
+      }));
+      return response.json(data);
     }
   );
 };
 
-const getArtByTag = (request: Request, response: Response) => {
-  const tagParams = request.query.tags;
-  if (typeof tagParams !== 'string') {
-    return response.status(400).json({ error: 'Invalid dataset' });
-  }
-  const checkedTags =
-    tagParams.length > 0 ? tagParams.split(',') : [imagekitCategories.art];
-
-  imagekitArt.listFiles(
-    {
-      skip: 0,
-      limit: 100,
-      tags: checkedTags as string[],
-    },
-    function (error, result) {
-      if (error) {
-        return response.status(500).json({ error: error });
-      }
-      return response.json(result);
-    }
-  );
-};
-export { getArt, getArtByTag };
+export { getArt };

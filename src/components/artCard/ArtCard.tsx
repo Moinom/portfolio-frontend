@@ -31,13 +31,9 @@ const ArtCard = (props: Art) => {
   return (
     <>
       <div className={styles.wrapper} onClick={toggleFullsizeVisible}>
-        <img
-          src={smallImageUrl()}
-          alt={props.customMetadata.title}
-          className={styles.card}
-        />
+        <img src={smallImageUrl()} alt={props.title} className={styles.card} />
         <div className={styles.layover}>
-          <h3>{props.customMetadata.title}</h3>
+          <h3>{props.title}</h3>
         </div>
       </div>
       {fullsizeVisible && (
@@ -51,10 +47,10 @@ const ArtCard = (props: Art) => {
           <div className={styles.imageWrapper}>
             <img
               src={bigImageUrl()}
-              alt={props.customMetadata.title}
+              alt={props.title}
               className={styles.card}
             />
-            <p>{props.customMetadata.title}</p>
+            <p>{props.title}</p>
           </div>
         </div>
       )}
