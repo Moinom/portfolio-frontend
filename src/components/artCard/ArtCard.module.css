@@ -45,10 +45,21 @@
   z-index: 8;
 }
 
-.fullsizeWrapper img {
+.imageWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.imageWrapper img {
   height: 80vh;
   width: auto;
   z-index: 9;
+}
+
+.imageWrapper p {
+  color: white;
+  z-index: 10;
 }
 
 .fullsizeBackground {

@@ -48,11 +48,14 @@ const ArtCard = (props: Art) => {
           >
             <CloseIcon className={styles.closeIcon} alt="close" />
           </div>
-          <img
-            src={bigImageUrl()}
-            alt={props.customMetadata.title}
-            className={styles.card}
-          />
+          <div className={styles.imageWrapper}>
+            <img
+              src={bigImageUrl()}
+              alt={props.customMetadata.title}
+              className={styles.card}
+            />
+            <p>{props.customMetadata.title}</p>
+          </div>
         </div>
       )}
     </>
