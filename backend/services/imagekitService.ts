@@ -21,6 +21,10 @@ export interface ImagekitResponse {
   customCoordinates: string | null;
   customMetadata?: {
     title?: string;
+    description?: string;
+    language?: string;
+    prod?: string;
+    github?: string;
   };
   isPrivateFile: boolean;
   url: string;

@@ -43,3 +43,11 @@
   right: 20px;
   top: 20px;
 }
+
+.filter {
+  color: #3e5fd4;
+}
+
+.filter input {
+margin-right: 10px;
+}

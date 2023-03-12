@@ -1,0 +1,49 @@
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(81, 110, 214);
+  padding: 25px;
+  margin-bottom: 15px;
+  break-inside: avoid-column;
+  gap: 20px;
+  line-height: 1.2;
+  transition: background-color 0.3s ease;
+}
+
+.wrapper h2 {
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+.wrapper p strong {
+  font-weight: 600;
+}
+
+.wrapper:hover {
+  background-color: rgba(81, 110, 214, 0.5);
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+}
+
+.links a {
+  font-weight: 600;
+  font-style: italic;
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.links a:hover {
+  color:#203994;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+}

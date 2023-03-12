@@ -26,7 +26,7 @@ const FilterPopUp = ({
           onClick={togglePopupVisibility}
         />
         {filters.map((filter, index) => (
-          <li key={`filter${index}`}>
+          <li key={`filter${index}`} className={styles.filter}>
             <input
               type="checkbox"
               id={filter.tag + index}
