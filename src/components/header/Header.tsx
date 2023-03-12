@@ -8,7 +8,9 @@ function Header() {
     <div className={styles.headerWrapper}>
       <div className={styles.switchWrapper}>
         <Link to={'/'} className={styles.link}>
-          <span className={`${styles.themeLabel} ${styles.art}`}>Art</span>
+          <span className={`${styles.themeLabel} ${styles.art}`}>
+            <span id={styles.blocker}>_</span>Art
+          </span>
         </Link>
         <ToggleSwitch />
         <Link to={'/'} className={styles.link}>

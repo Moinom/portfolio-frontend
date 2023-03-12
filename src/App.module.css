@@ -12,7 +12,37 @@
   background-color: #f4f4f4;
 }
 
+.artColours a {
+  color: #3e5fd4;
+  transition: color 0.5s ease;
+}
+
 .codeColours {
   color: #e7e7e7;
   background-color: #2f51cb;
+}
+
+.codeColours a {
+  color: #e7e7e7;
+  transition: color 0.5s ease;
+}
+
+.icon {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  scale: 1.5;
+  cursor: pointer;
+}
+
+.iconCode {
+  fill: #e7e7e7;
+}
+
+/* mobile view */
+@media (max-width: 800px) {
+  .icon {
+    bottom: 20px;
+    right: 20px;
+  }
 }

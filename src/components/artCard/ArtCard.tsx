@@ -3,40 +3,45 @@ import { Art } from '../artGallery/artTypes';
 import styles from './ArtCard.module.css';
 import { ReactComponent as CloseIcon } from '../../assets/icons/x.svg';
 
-const ArtCard = (props: Art) => {
+interface Props {
+  art: Art;
+  desktopView: boolean;
+}
+
+const ArtCard = ({ art, desktopView }: Props) => {
   const [fullsizeVisible, setFullsizeVisible] = useState(false);
 
   function toggleFullsizeVisible() {
-    setFullsizeVisible(!fullsizeVisible);
+    desktopView && setFullsizeVisible(!fullsizeVisible);
   }
 
   const smallImageUrl = () => {
-    if (props.width > 400) {
-      let split = props.url.split('/');
+    if (art.width > 400) {
+      let split = art.url.split('/');
       split.splice(4, 0, 'tr:w-400');
       return split.join('/');
     }
-    return props.url;
+    return art.url;
   };
 
   const bigImageUrl = () => {
-    if (props.width > 800) {
-      let split = props.url.split('/');
+    if (art.width > 800) {
+      let split = art.url.split('/');
       split.splice(4, 0, 'tr:w-800');
       return split.join('/');
     }
-    return props.url;
+    return art.url;
   };
 
   return (
     <>
       <div className={styles.wrapper} onClick={toggleFullsizeVisible}>
-        <img src={smallImageUrl()} alt={props.title} className={styles.card} />
+        <img src={smallImageUrl()} alt={art.title} className={styles.card} />
         <div className={styles.layover}>
-          <h3>{props.title}</h3>
+          <h3>{art.title}</h3>
         </div>
       </div>
-      {fullsizeVisible && (
+      {fullsizeVisible && desktopView && (
         <div className={styles.fullsizeWrapper}>
           <div
             className={styles.fullsizeBackground}
@@ -45,12 +50,8 @@ const ArtCard = (props: Art) => {
             <CloseIcon className={styles.closeIcon} alt="close" />
           </div>
           <div className={styles.imageWrapper}>
-            <img
-              src={bigImageUrl()}
-              alt={props.title}
-              className={styles.card}
-            />
-            <p>{props.title}</p>
+            <img src={bigImageUrl()} alt={art.title} className={styles.card} />
+            <p>{art.title}</p>
           </div>
         </div>
       )}

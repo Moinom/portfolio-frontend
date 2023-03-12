@@ -12,6 +12,7 @@ const ArtGallery = () => {
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [isPopupVisible, setPopupVisible] = useState(false);
   const [art, setArt] = useState<Art[]>([]);
+  const [desktopView, setDesktopView] = useState(true);
 
   const togglePopupVisibility = () => {
     setPopupVisible(!isPopupVisible);
@@ -37,6 +38,17 @@ const ArtGallery = () => {
 
   useEffect(() => {
     getArt().then((response) => setArt(response));
+    const handleResize = () => {
+      if (window.innerWidth > 800) {
+        setDesktopView(true);
+      } else {
+        setDesktopView(false);
+      }
+    };
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   return (
@@ -58,7 +70,13 @@ const ArtGallery = () => {
             artItem.tags.some((tag) => selectedTags.includes(tag))
           )
           .map((item, index) => {
-            return <ArtCard {...item} key={`artcard${index}`} />;
+            return (
+              <ArtCard
+                art={item}
+                desktopView={desktopView}
+                key={`artcard${index}`}
+              />
+            );
           })}
       </div>
     </section>
