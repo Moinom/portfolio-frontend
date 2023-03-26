@@ -1,4 +1,4 @@
-import * as apiUrls from './urls';
+import * as apiUrls from '../utils/urls';
 
 export const getArt = async () => {
   try {

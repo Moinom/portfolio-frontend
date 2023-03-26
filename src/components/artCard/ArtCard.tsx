@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Art } from '../artGallery/artTypes';
+import { Art } from '../../utils/types';
 import styles from './ArtCard.module.css';
 import { ReactComponent as CloseIcon } from '../../assets/icons/x.svg';
 
@@ -35,19 +35,23 @@ const ArtCard = ({ art, desktopView }: Props) => {
 
   return (
     <>
-      <div className={styles.wrapper} onClick={toggleFullsizeVisible}>
+      <div
+        className={styles.wrapper}
+        onClick={toggleFullsizeVisible}
+        data-testid="previewWrapper"
+      >
         <img src={smallImageUrl()} alt={art.title} className={styles.card} />
         <div className={styles.layover}>
           <h3>{art.title}</h3>
         </div>
       </div>
       {fullsizeVisible && desktopView && (
-        <div className={styles.fullsizeWrapper}>
+        <div className={styles.fullsizeWrapper} data-testid="fullsizeWrapper">
           <div
             className={styles.fullsizeBackground}
             onClick={toggleFullsizeVisible}
           >
-            <CloseIcon className={styles.closeIcon} alt="close" />
+            <CloseIcon className={styles.closeIcon} title="close" />
           </div>
           <div className={styles.imageWrapper}>
             <img src={bigImageUrl()} alt={art.title} className={styles.card} />

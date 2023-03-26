@@ -1,10 +1,10 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import FilterPopUp from '../filterPopUp/FilterPopUp';
-import { artFilters, Filter } from '../filterPopUp/filters';
+import { artFilters, Filter } from '../../utils/filters';
 import { ReactComponent as FilterIcon } from '../../assets/icons/filter.svg';
 import styles from './ArtGallery.module.css';
 import { getArt } from '../../api/apiCalls';
-import { Art } from './artTypes';
+import { Art } from '../../utils/types';
 import ArtCard from '../artCard/ArtCard';
 
 const ArtGallery = () => {

@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { getCode } from '../../api/apiCalls';
-import { codeFilters, Filter } from '../filterPopUp/filters';
-import { Code } from './codeTypes';
+import { codeFilters, Filter } from '../../utils/filters';
+import { Code } from '../../utils/types';
 import { ReactComponent as FilterIcon } from '../../assets/icons/filter.svg';
 import FilterPopUp from '../filterPopUp/FilterPopUp';
 import styles from './CodeGallery.module.css';

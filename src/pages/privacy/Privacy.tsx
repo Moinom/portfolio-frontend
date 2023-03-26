@@ -238,11 +238,15 @@ const Privacy = () => {
           Berlin, Deutschland; <strong>Rechtsgrundlagen:</strong> Berechtigte
           Interessen (Art. 6 Abs. 1 S. 1 lit. f) DSGVO);{' '}
           <strong>Website:</strong>{' '}
-          <a href="https://www.strato.de" target="_blank">
+          <a href="https://www.strato.de" target="_blank" rel="noreferrer">
             https://www.strato.de
           </a>
           ; <strong>Datenschutzerklärung:</strong>{' '}
-          <a href="https://www.strato.de/datenschutz" target="_blank">
+          <a
+            href="https://www.strato.de/datenschutz"
+            target="_blank"
+            rel="noreferrer"
+          >
             https://www.strato.de/datenschutz
           </a>
           ; <strong>Auftragsverarbeitungsvertrag:</strong> Wird vom
@@ -350,17 +354,22 @@ const Privacy = () => {
           Gordon House, Barrow Street, Dublin 4, Irland;{' '}
           <strong>Rechtsgrundlagen:</strong> Berechtigte Interessen (Art. 6 Abs.
           1 S. 1 lit. f) DSGVO); <strong>Website:</strong>{' '}
-          <a href="https://fonts.google.com/" target="_blank">
+          <a href="https://fonts.google.com/" target="_blank" rel="noreferrer">
             https://fonts.google.com/
           </a>
           ; <strong>Datenschutzerklärung:</strong>{' '}
-          <a href="https://policies.google.com/privacy" target="_blank">
+          <a
+            href="https://policies.google.com/privacy"
+            target="_blank"
+            rel="noreferrer"
+          >
             https://policies.google.com/privacy
           </a>
           ; <strong>Weitere Informationen:</strong>{' '}
           <a
             href="https://developers.google.com/fonts/faq/privacy?hl=de"
             target="_blank"
+            rel="noreferrer"
           >
             https://developers.google.com/fonts/faq/privacy?hl=de
           </a>

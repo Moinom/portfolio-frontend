@@ -1,5 +1,5 @@
 import React from 'react';
-import { Code } from '../codeGallery/codeTypes';
+import { Code } from '../../utils/types';
 import styles from './CodeCard.module.css';
 import { ReactComponent as ArrowRight } from '../../assets/icons/arrow-right.svg';
 
@@ -32,7 +32,7 @@ const CodeCard = (props: Code) => {
           </a>
         )}
         <a href={props.github} target="_blank" rel="noreferrer">
-          <ArrowRight /> <span>See the code</span>
+          <ArrowRight /> <span>View on Github</span>
         </a>
       </div>
     </div>

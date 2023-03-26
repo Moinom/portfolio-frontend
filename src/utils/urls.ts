@@ -5,4 +5,3 @@ const apiUrl =
 
 export const artUrl = `${apiUrl}/art`;
 export const codeUrl = `${apiUrl}/code`;
-export const favouritesUrl = `${apiUrl}/favourites`;
