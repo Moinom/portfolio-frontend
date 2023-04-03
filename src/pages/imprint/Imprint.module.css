@@ -1,0 +1,8 @@
+.imprintWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-self: center;
+    text-align: center;
+    margin-top: 60px;
+}

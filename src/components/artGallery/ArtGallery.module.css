@@ -1,0 +1,37 @@
+.filter {
+  display: flex;
+  cursor: pointer;
+}
+
+.filterIcon {
+  transform: scale(0.75);
+}
+
+.codeStrokeColour {
+  stroke: #e7e7e7;
+}
+
+.gallery {
+  column-count: 4;
+  column-gap: 15px;
+  margin: 20px 0;
+}
+
+/* small desktop / tablet view */
+@media (max-width: 1400px) {
+  .gallery {
+    column-count: 3;
+    column-gap: 10px;
+  }
+}
+
+/* mobile view */
+@media (max-width: 800px) {
+  .gallery {
+    column-count: 1;
+    column-gap: 5px;
+  }
+  .filter h1 {
+    display: none;
+  }
+}

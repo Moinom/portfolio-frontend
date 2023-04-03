@@ -1,0 +1,57 @@
+.toggleSwitchWrapper {
+  height: 110px;
+  width: 325px;
+  border-radius: 60px;
+  margin: 0 50px;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 0 30px rgba(0, 11, 54, 0.8) inset;
+  transition: all 0.5s ease;
+}
+
+.artColours {
+  background-color: #2f51cb;
+}
+
+.codeColours {
+  background-color: #f4f4f4;
+}
+
+.notch {
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  box-shadow: 0 0 15px rgba(0, 11, 54, 0.8);
+  transition: all 0.5s ease;
+  background-color: #f4f4f4;
+}
+
+.codeSwitch {
+  transform: translateX(215px);
+  background-color: #2f51cb;
+}
+
+/* mobile view */
+@media (max-width: 800px) {
+  .toggleSwitchWrapper {
+    height: 50px;
+    width: 150px;
+    border-radius: 30px;
+    margin: 10px 0;
+  }
+
+  .notch {
+    height: 40px;
+    width: 40px;
+    top: 5px;
+    left: 5px;
+    box-shadow: 0 0 10px rgba(0, 11, 54, 0.8);
+  }
+
+  .codeSwitch {
+    transform: translateX(100px);
+  }
+}

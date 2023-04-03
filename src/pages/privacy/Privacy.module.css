@@ -1,0 +1,12 @@
+.privacyWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.privacyWrapper ul {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}

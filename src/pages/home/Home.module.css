@@ -1,0 +1,19 @@
+.icon {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  scale: 1.5;
+  cursor: pointer;
+}
+
+.iconCode {
+  fill: #e7e7e7;
+}
+
+/* mobile view */
+@media (max-width: 800px) {
+  .icon {
+    bottom: 20px;
+    right: 20px;
+  }
+}

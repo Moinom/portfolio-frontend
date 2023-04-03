@@ -1,0 +1,42 @@
+.footerWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 80px 5% 30px 5%;
+  margin-top: auto;
+}
+
+.socialMediaIcon {
+  margin: 0 10px;
+  stroke: #3e5fd4;
+  width: 20px;
+  height: 20px;
+}
+
+.footerLinks {
+  font-family: 'Montserrat';
+  font-size: 16px;
+  text-decoration: none;
+  margin-left: 15px;
+  color: #3e5fd4;
+}
+
+.codeColour {
+  color: #e7e7e7;
+}
+
+.codeStrokeColour {
+  stroke: #e7e7e7;
+}
+
+/* mobile view */
+@media (max-width: 800px) {
+  .footerWrapper {
+    flex-direction: column;
+  }
+
+  .iconWrapper {
+    margin-bottom: 10px;
+  }
+}
