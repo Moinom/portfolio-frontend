@@ -18,7 +18,7 @@ const FilterPopUp = ({
   togglePopupVisibility,
 }: FilterProps) => {
   return (
-    <div className={styles.popupWrapper}>
+    <div className={styles.popupWrapper} data-testid="filterPopUp">
       <div className={styles.popupBackground} onClick={togglePopupVisibility} />
       <ul className={styles.popup}>
         <CloseIcon

@@ -54,7 +54,7 @@ const ArtGallery = () => {
   return (
     <section>
       <div className={styles.filter} onClick={togglePopupVisibility}>
-        <FilterIcon className={styles.filterIcon} />
+        <FilterIcon className={styles.filterIcon} title="filter" />
         <h1>Filter</h1>
       </div>
       {isPopupVisible && (
@@ -64,7 +64,7 @@ const ArtGallery = () => {
           togglePopupVisibility={togglePopupVisibility}
         />
       )}
-      <div className={styles.gallery}>
+      <div className={styles.gallery} data-testid="gallery">
         {art
           .filter((artItem) =>
             artItem.tags.some((tag) => selectedTags.includes(tag))
