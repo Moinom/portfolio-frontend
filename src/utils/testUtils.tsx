@@ -3,6 +3,7 @@ import React, { ReactElement } from 'react';
 import { render, RenderOptions } from '@testing-library/react';
 import { ThemeProvider } from '../contexts/ThemeProvider';
 import { BrowserRouter } from 'react-router-dom';
+import { Filter } from './filters';
 
 const AllTheProviders = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -46,3 +47,26 @@ export const mockCode: Code = {
   width: 900,
   url: 'test-url',
 };
+
+export const mockFilters: Filter[] = [
+  {
+    tag: 'all',
+    checked: true,
+    name: 'Mock Filter All',
+  },
+  {
+    tag: 'mockTag1',
+    checked: false,
+    name: 'Mock Filter 1',
+  },
+  {
+    tag: 'mockTag2',
+    checked: false,
+    name: 'Mock Filter 2',
+  },
+  {
+    tag: 'mockTag3',
+    checked: false,
+    name: 'Mock Filter 3',
+  },
+];
