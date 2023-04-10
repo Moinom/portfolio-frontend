@@ -42,7 +42,7 @@ const CodeGallery = () => {
   return (
     <section>
       <div className={styles.filter} onClick={togglePopupVisibility}>
-        <FilterIcon className={styles.filterIcon} />
+        <FilterIcon className={styles.filterIcon} title="filter" />
         <h1>Filter</h1>
       </div>
       {isPopupVisible && (
