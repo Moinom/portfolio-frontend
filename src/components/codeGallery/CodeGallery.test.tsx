@@ -3,6 +3,8 @@ import CodeGallery from './CodeGallery';
 import { render, screen } from '../../utils/testUtils';
 import userEvent from '@testing-library/user-event';
 
+// TODO: test filter functionality and filter close
+
 describe('Code Gallery Filters', () => {
   it('shows filter the filter icon', () => {
     render(<CodeGallery />);

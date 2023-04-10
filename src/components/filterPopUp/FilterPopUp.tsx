@@ -24,6 +24,7 @@ const FilterPopUp = ({
         <CloseIcon
           className={styles.closeIcon}
           onClick={togglePopupVisibility}
+          title="close icon"
         />
         {filters.map((filter, index) => (
           <li key={`filter${index}`} className={styles.filter}>
