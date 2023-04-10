@@ -10,7 +10,7 @@ const Footer = () => {
   const { theme } = useContext(ThemeContext);
   return (
     <div className={styles.footerWrapper}>
-      <div className={styles.iconWrapper}>
+      <div className={styles.iconWrapper} data-testid="socialMedia">
         <a
           href="https://www.instagram.com/moinomlisa/"
           target="_blank"
@@ -20,6 +20,7 @@ const Footer = () => {
             className={`${styles.socialMediaIcon} ${
               theme === themes.code ? styles.codeStrokeColour : ''
             }`}
+            title="Instagram Icon"
           />
         </a>
         <a
@@ -31,6 +32,7 @@ const Footer = () => {
             className={`${styles.socialMediaIcon} ${
               theme === themes.code ? styles.codeStrokeColour : ''
             }`}
+            title="LinkedIn Icon"
           />
         </a>
         <a href="mailto:info@lisa-strempel.de">
@@ -38,6 +40,7 @@ const Footer = () => {
             className={`${styles.socialMediaIcon} ${
               theme === themes.code ? styles.codeStrokeColour : ''
             }`}
+            title="Email Icon"
           />
         </a>
       </div>
