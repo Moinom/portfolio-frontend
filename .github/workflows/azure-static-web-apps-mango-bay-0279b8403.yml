@@ -14,13 +14,6 @@ jobs:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
     runs-on: ubuntu-latest
     name: Build and Deploy Job
-    variables:
-      - name: REACT_APP_ENVIRONMENT
-      value: prod
-      - name: REACT_APP_API_URL_DEV
-      value: ''
-      - name: REACT_APP_API_URL_PROD
-      value: https://portfolio-website-backend.azurewebsites.net
     steps:
       - uses: actions/checkout@v2
         with:
@@ -38,6 +31,10 @@ jobs:
           api_location: "" # Api source code path - optional
           output_location: "build" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
+        env:
+          REACT_APP_ENVIRONMENT: 'prod'
+          REACT_APP_API_URL_DEV: ''
+          REACT_APP_API_URL_PROD: 'https://portfolio-website-backend.azurewebsites.net'
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
