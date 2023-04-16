@@ -64,7 +64,7 @@ const ArtGallery = () => {
           togglePopupVisibility={togglePopupVisibility}
         />
       )}
-      <div className={styles.gallery} data-testid="gallery">
+      <div className={styles.gallery} data-testid="artGallery">
         {art
           .filter((artItem) =>
             artItem.tags.some((tag) => selectedTags.includes(tag))

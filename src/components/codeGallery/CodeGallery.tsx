@@ -52,7 +52,7 @@ const CodeGallery = () => {
           togglePopupVisibility={togglePopupVisibility}
         />
       )}
-      <div className={styles.gallery}>
+      <div className={styles.gallery} data-testid="codeGallery">
         {code
           .filter((codeItem) =>
             codeItem.tags.some((tag) => selectedTags.includes(tag))
