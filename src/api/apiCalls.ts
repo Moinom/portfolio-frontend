@@ -1,6 +1,7 @@
 import * as apiUrls from '../utils/urls';
+import { Art, Code } from '../utils/types';
 
-export const getArt = async () => {
+export async function getArt(): Promise<Art[]> {
   try {
     let options = {
       method: 'GET',
@@ -12,10 +13,11 @@ export const getArt = async () => {
     throw response;
   } catch (error) {
     console.log(error);
+    return [];
   }
-};
+}
 
-export const getCode = async () => {
+export async function getCode(): Promise<Code[]> {
   try {
     let options = {
       method: 'GET',
@@ -27,5 +29,6 @@ export const getCode = async () => {
     throw response;
   } catch (error) {
     console.log(error);
+    return [];
   }
-};
+}
