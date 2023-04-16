@@ -6,7 +6,7 @@ const Imprint = () => {
     <div className={styles.imprintWrapper}>
       <h1>Imprint</h1>
       <h2>Angaben gemäß § 5 TMG</h2>
-      <p>
+      <p data-testid="address">
         Lisa Strempel
         <br />
         Luruper Hauptstraße 210
