@@ -1,8 +1,4 @@
 name: Azure Static Web Apps CI/CD
-variables:
-  REACT_APP_ENVIRONMENT: 'prod'
-  REACT_APP_API_URL_DEV: ''
-  REACT_APP_API_URL_PROD: 'https://portfolio-website-backend.azurewebsites.net'
 
 on:
   push:
@@ -18,6 +14,13 @@ jobs:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
     runs-on: ubuntu-latest
     name: Build and Deploy Job
+    variables:
+      - name: REACT_APP_ENVIRONMENT
+      value: prod
+      - name: REACT_APP_API_URL_DEV
+      value: ''
+      - name: REACT_APP_API_URL_PROD
+      value: https://portfolio-website-backend.azurewebsites.net
     steps:
       - uses: actions/checkout@v2
         with:
