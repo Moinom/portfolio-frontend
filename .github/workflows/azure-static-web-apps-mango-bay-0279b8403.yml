@@ -1,4 +1,8 @@
 name: Azure Static Web Apps CI/CD
+variables:
+  REACT_APP_ENVIRONMENT: 'prod'
+  REACT_APP_API_URL_DEV: ''
+  REACT_APP_API_URL_PROD: 'https://portfolio-website-backend.azurewebsites.net'
 
 on:
   push:
