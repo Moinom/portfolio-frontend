@@ -5,7 +5,7 @@ import userEvent from '@testing-library/user-event';
 import Routes from '../../router/Routes';
 import Footer from '../footer/Footer';
 
-it('renders footer correctly', () => {
+it('renders header correctly', () => {
   render(<Header />);
 });
 
