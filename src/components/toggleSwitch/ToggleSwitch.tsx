@@ -11,12 +11,13 @@ const ToggleSwitch = () => {
         theme === themes.art ? styles.artColours : styles.codeColours
       }`}
       onClick={toggleTheme}
+      data-testid="switch"
     >
       <div
         className={`${styles.notch} ${
           theme === themes.code && styles.codeSwitch
         }`}
-      ></div>
+      />
     </div>
   );
 };
