@@ -13,6 +13,14 @@ const CodeCard = (props: Code) => {
     return props.url;
   };
 
+  function formatRepoName(link: string) {
+    return link
+      .split('/')
+      .slice(-1)[0]
+      .replaceAll('-', ' ')
+      .replace(/(^\w{1})|(\s+\w{1})/g, (letter) => letter.toUpperCase());
+  }
+
   return (
     <div className={styles.wrapper}>
       <h2>{props.title}</h2>
@@ -31,9 +39,12 @@ const CodeCard = (props: Code) => {
             <ArrowRight title="arrow right" /> <span>Check it out</span>
           </a>
         )}
-        <a href={props.github} target="_blank" rel="noreferrer">
-          <ArrowRight title="arrow right" /> <span>View on Github</span>
-        </a>
+        {props.github?.split(',').map((link) => (
+          <a href={link} target="_blank" rel="noreferrer">
+            <ArrowRight title="arrow right" />{' '}
+            <span>View {formatRepoName(link)} on Github</span>
+          </a>
+        ))}
       </div>
     </div>
   );
