@@ -36,17 +36,31 @@ export const smallMockArt: Art = {
   url: 'test-url',
 };
 
-export const mockCode: Code = {
-  tags: ['coding', 'website'],
-  title: 'Test title',
-  description: 'This is a test',
-  language: 'test language',
-  prod: 'test prod link',
-  github: 'test github link',
-  height: 800,
-  width: 900,
-  url: 'test-url',
-};
+export const mockCode: Code[] = [
+  {
+    tags: ['coding', 'website'],
+    title: 'Test title',
+    description: 'This is a test',
+    language: 'test language',
+    prod: 'https://lisa-strempel.de',
+    github: 'https://github.com/Moinom/portfolio-frontend',
+    height: 800,
+    width: 900,
+    url: 'test-url',
+  },
+  {
+    tags: ['coding', 'website'],
+    title: 'Test title',
+    description: 'This is a test',
+    language: 'test language',
+    prod: 'https://lisa-strempel.de',
+    github:
+      'https://github.com/Moinom/portfolio-frontend,https://github.com/Moinom/portfolio-backend',
+    height: 800,
+    width: 900,
+    url: 'test-url',
+  },
+];
 
 export const mockFilters: Filter[] = [
   {
