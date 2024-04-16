@@ -48,9 +48,9 @@ const Privacy = () => {
       <p>
         Lisa Strempel
         <br />
-        Luruper Hauptstraße 210
+        Westpreußenweg 3
         <br />
-        22547 Hamburg
+        66346 Püttlingen
         <br />
         Deutschland
       </p>
