@@ -9,9 +9,9 @@ const Imprint = () => {
       <p data-testid="address">
         Lisa Strempel
         <br />
-        Luruper Hauptstraße 210
+        Westpreußenweg 3
         <br />
-        22547 Hamburg
+        66346 Püttlingen
         <br />
       </p>
       <p>
